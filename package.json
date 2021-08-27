@@ -4,7 +4,7 @@
   "private": true,
   "main": "server/server_old.js",
   "scripts": {
-    "start": "npx concurrently npm:start:* --kill-others --kill-others-on-fail",
+    "start": "npm run start:frontend && npm run start:backend",
     "start:frontend": "cross-env NODE_ENV=obss-local webpack-dev-server --config webpack.dev.js --mode=development --open --hot",
     "start:backend": "nodemon server/server.js",
     "build:local": "cross-env NODE_ENV=obss-local webpack --config webpack.prod.js --mode=development",
