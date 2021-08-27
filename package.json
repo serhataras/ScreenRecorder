@@ -1,43 +1,93 @@
 {
-  "name": "my-app",
-  "version": "0.1.0",
+  "name": "screen-record",
+  "version": "0.0.1",
   "private": true,
+  "main": "server/server_old.js",
+  "scripts": {
+    "start": "npx concurrently npm:start:* --kill-others --kill-others-on-fail",
+    "start:frontend": "cross-env NODE_ENV=obss-local webpack-dev-server --config webpack.dev.js --mode=development --open --hot",
+    "start:backend": "nodemon server/server.js",
+    "build:local": "cross-env NODE_ENV=obss-local webpack --config webpack.prod.js --mode=development",
+    "build:discover": "cross-env NODE_ENV=discover webpack --config webpack.prod.js --mode=production",
+    "serve": "cross-env NODE_ENV=obss-local node_modules/.bin/http-server ./dist -p 9099"
+  },
+  "lint-staged": {
+    "*.js": [
+      "eslint --fix",
+      "git add"
+    ],
+    "*.css": [
+      "stylelint --syntax css --fix",
+      "git add"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
   "dependencies": {
-    "@testing-library/jest-dom": "^5.14.1",
-    "@testing-library/react": "^11.2.7",
-    "@testing-library/user-event": "^12.8.3",
-    "@types/jest": "^26.0.24",
-    "@types/node": "^12.20.16",
+    "axios": "^0.18.0",
+    "axios-retry": "^3.1.1",
+    "keycloak-js": "4.0.0-beta.2",
+    "lodash": "4.17.15"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.6.4",
+    "@babel/plugin-proposal-class-properties": "^7.7.4",
+    "@babel/preset-env": "^7.6.3",
+    "@babel/preset-react": "^7.6.3",
+    "@sap_oss/node-socketio-stream": "^1.0.3",
+    "@types/node": "^14.14.9",
     "@types/react": "^17.0.14",
     "@types/react-dom": "^17.0.9",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
-    "react-scripts": "4.0.3",
-    "typescript": "^4.3.5",
-    "web-vitals": "^1.1.2"
-  },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
-  },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
+    "@types/recordrtc": "^5.6.6",
+    "@types/uuid": "^3.4.0",
+    "@typescript-eslint/eslint-plugin": "^4.12.0",
+    "@typescript-eslint/parser": "^4.12.0",
+    "babel-loader": "^8.0.6",
+    "concatenateblobs": "^1.0.2",
+    "copy-webpack-plugin": "^5.0.4",
+    "cors": "^2.8.5",
+    "cross-env": "5.2.1",
+    "css-loader": "^3.4.1",
+    "dotenv": "^8.2.0",
+    "eslint": "^7.2.0",
+    "eslint-plugin-import": "^2.21.2",
+    "eslint-plugin-react": "^7.20.0",
+    "eslint-plugin-unicorn": "^33.0.1",
+    "express": "^4.17.1",
+    "file-loader": "^6.0.0",
+    "gridfs-stream": "^1.1.1",
+    "html-webpack-plugin": "^3.2.0",
+    "http-server": "^0.11.1",
+    "i18next": "^19.7.0",
+    "inspectpack": "^4.2.2",
+    "lodash": "^4.17.21",
+    "mini-css-extract-plugin": "^0.8.0",
+    "moment": "^2.25.3",
+    "moment-timezone": "^0.5.31",
+    "mongodb": "^4.1.0",
+    "mongoose": "^5.13.5",
+    "nodemon": "^2.0.12",
+    "optimize-css-assets-webpack-plugin": "^5.0.3",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "react-i18next": "^11.7.2",
+    "react-player": "^2.9.0",
+    "recordrtc": "^5.6.2",
+    "socket.io": "^4.1.3",
+    "socket.io-client": "^4.1.3",
+    "style-loader": "^1.1.2",
+    "toastr": "^2.1.4",
+    "ts-loader": "^8.0.11",
+    "typescript": "4.0.5",
+    "uuid": "^8.3.2",
+    "validatorjs": "^3.21.0",
+    "webpack": "^4.41.2",
+    "webpack-assets-manifest": "^3.1.1",
+    "webpack-cli": "^3.3.9",
+    "webpack-dev-server": "^3.9.0",
+    "webpack-merge": "^4.1.0"
   }
 }

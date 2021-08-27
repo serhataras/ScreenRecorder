@@ -1,0 +1,30 @@
+{
+  "cancel": "Cancel",
+  "logout": "Sign Out",
+  "403_error": "This user is not authorized.",
+  "403_error_detail": "You tried to access a page you did not have prior authorization for.",
+  "campuses": "Authorized Campuses",
+  "user_settings": {
+    "title": "User Settings",
+    "account_security": "Account Security",
+    "password": {
+      "password_placeholder": "Enter new password!",
+      "password_confirmation_label": "Enter new password again!",
+      "change_password": "Change Password",
+      "change_password_dialog_title": "Change User's Password",
+      "password_criteria": "Password must contain at least one uppercase letter, one lowercase letter and one number!",
+      "validation": {
+        "required": "This field cannot be empty!",
+        "max": {
+          "string": "Max length for the password is "
+        },
+        "min": {
+          "string": "Min length for the password is "
+        },
+        "password_criteria": "New password does not match the password criteria!",
+        "confirmed": "Passwords do not match!"
+      }
+    }
+  }
+}
+

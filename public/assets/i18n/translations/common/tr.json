@@ -1,0 +1,29 @@
+{
+  "logout": "Çıkış Yap",
+  "403_error": "Kullanıcının bu işlemi yapmaya yetkisi yoktur",
+  "403_error_detail": "Kullanıcı yetkisi dışında bir sayfaya erişmeye çalışmıştır.",
+  "cancel": "İptal",
+  "campuses": "Erişim yetkisi olan yerleşkeler",
+  "user_settings": {
+    "title": "Kullanıcı Ayarları",
+    "account_security": "Hesap Güvenliği",
+    "password": {
+      "password_placeholder": "Yeni Şifreyi giriniz!",
+      "password_confirmation_label": "Yeni şifreyi bir daha giriniz!",
+      "change_password": "Şifre Değiştir",
+      "change_password_dialog_title": "Kullanıcı Şifre Değişikliği ",
+      "password_criteria": "Şifre en az 1 Büyük harf, 1 Küçük harf ve 1 Rakam içermelidir!",
+      "validation": {
+        "required": "Bu alan boş bırakılamaz!",
+        "max": {
+          "string": "Şifre için verilebilecek en fazla uzunluk :"
+        },
+        "min": {
+          "string": "Şifre için verilebilecek en az uzunluk :"
+        },
+        "password_criteria": "Yeni şifre, şifre kriterlerine uygun değil!",
+        "confirmed": "Şifreler aynı değil!"
+      }
+    }
+  }
+}

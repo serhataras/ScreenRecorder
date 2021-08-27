@@ -1,0 +1,10 @@
+# Bu file'i git hooklar da okuduğu için file path'i "**/ornek.ts" şeklinde verelim.
+
+**/webpack.common.js
+**/webpack.dev.js
+**/webpack.prod.js
+**/webpack.config.js
+**/.eslintrc.js
+**/babel.config.js
+**/src/index.tsx
+**/src/config/ExternalModuleDeclarations.ts

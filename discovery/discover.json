@@ -1,0 +1,4 @@
+{
+  "KEYCLOAK_URL" : "http://kafka1:8888/auth",
+  "KEYCLOAK_ENABLED" : "true"
+}

@@ -1,17 +1,37 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
+import '../public/assets/styles/index.css';
 import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React from 'react';
+import ReactDOM from 'react-dom'
 
-ReactDOM.render(
-    <React.StrictMode>
-        <App/>
-    </React.StrictMode>,
-    document.getElementById('root')
-);
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+export let configs : any = {};
+
+let parser = document.createElement('a'),
+    searchObject = {},
+    queries, split, i;
+// Let the browser do the work
+parser.href = location.href;
+// Convert query string to object
+queries = parser.search.replace(/^\?/, '').split('&');
+for ( i = 0; i < queries.length; i++ ) {
+  split = queries[i].split('=');
+  // @ts-ignore
+  searchObject[split[0]] = split[1];
+}
+
+configs.localOrigin = parser.origin;
+configs.localUrl = parser.origin.substring(0, parser.origin.lastIndexOf(parser.port) - 1);
+
+const rootElement = document.getElementById('root');
+
+async function initialize () {
+  ReactDOM.render(
+      <App/>
+      , rootElement
+  );
+}
+
+initialize().then();
+
+
+
